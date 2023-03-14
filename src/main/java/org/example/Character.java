@@ -1,4 +1,7 @@
 package org.example;
 
-public class Character {
+public abstract class Character {
+    public void attack(Character target) {
+        // code pour attaquer une cible
+    }
 }

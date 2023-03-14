@@ -1,4 +1,5 @@
 package org.example;
 
-public class Boss {
+public class Boss extends AbstractEnemy{
+
 }

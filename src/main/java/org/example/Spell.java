@@ -1,4 +1,4 @@
 package org.example;
 
-public class Spell {
+public class Spell extends AbstractSpell{
 }

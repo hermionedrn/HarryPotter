@@ -10,4 +10,8 @@ public class Wizard extends Character{
     public void defend() {
 
     }
+    @Override
+    public void attack(Character character) {
+        // code to attack
+    }
 }
