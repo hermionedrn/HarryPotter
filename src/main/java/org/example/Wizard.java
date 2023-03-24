@@ -1,11 +1,12 @@
 package org.example;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Wizard extends Character{
     private Pet pet;
     private Wand wand;
@@ -13,26 +14,21 @@ public class Wizard extends Character{
     private List<Spell> knownSpells;
     private List<Potion> potions;
 
+
     private String name; //nom du sorcier
 
-    public Wizard(String name, int level, String spell) {
+    public Wizard(String name, Wand wand) {
         this.name = name;
-    }
-    public Wizard(String name) {
-        this.name = name;
+        this.wand = new Wand();
     }
 
-    public String getName() {
-        return name;
+    public void equipWand(Wand wand) {
+        this.wand = wand;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public void defend() {
+    public void defend() {}
 
-    }
     @Override
     public void attack(Character character) {
         // code to attack
