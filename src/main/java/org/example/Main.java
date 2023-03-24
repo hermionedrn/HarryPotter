@@ -24,6 +24,6 @@ public class Main {
         wizard.equipWand(wand);
         wizard.equipHouse(house);
         System.out.println("La baguette de " + wizard.getName() + " a un coeur en " + wizard.getWand().getCore() + " et est en bois de " + wizard.getWand().getWandSize() + ".");
-        System.out.println("Le chapeau magique a décidé que tu appartanait à la maison");
+        System.out.println("Le chapeau magique a décidé que tu appartanait à la maison " + wizard.getHouse() + ".");
     }
 }
