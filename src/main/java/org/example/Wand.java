@@ -19,7 +19,6 @@ public class Wand {
     private Core core;
     private int size;
     private String name;
-    private String wood;
 
 
     public String getName() {

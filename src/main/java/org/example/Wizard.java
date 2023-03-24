@@ -1,5 +1,7 @@
 package org.example;
 import lombok.*;
+import org.example.Potion;
+import org.example.Spell;
 
 import java.util.List;
 
@@ -17,15 +19,19 @@ public class Wizard extends Character{
 
     private String name; //nom du sorcier
 
-    public Wizard(String name, Wand wand) {
+    public Wizard(String name, Wand wand, House house) {
         this.name = name;
         this.wand = new Wand();
+        this.house = house;
+
     }
 
     public void equipWand(Wand wand) {
         this.wand = wand;
     }
-
+    public void equipHouse(House house) {
+        this.house = house;
+    }
 
     public void defend() {}
 
