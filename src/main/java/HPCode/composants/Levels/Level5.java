@@ -14,25 +14,25 @@ public class Level5 {
     private Wizard wizard;
     public void run5(Wizard wizard) throws InterruptedException {
         System.out.println("");
-        System.out.println("-------------------- Hogwarts examination room ---------------------");
+        System.out.println("-------------------- Salle d’examen de Poudlard ---------------------");
         System.out.println("");
-        System.out.println("* Welcome in your fifth years in Hogwards, this year is quite special because there is the BUSE exam, plus a big garden party at the end. *");
+        System.out.println("* Bienvenue dans votre 5ème années à Poudlard, cette année est assez spéciale car il y a l'examen BUSE et une grande garden party à la fin *");
         Thread.sleep(2500);
-        System.out.println("* To prepare the garden party you need firework to surprise every one. However you need Fredd and George (in your class) to create those ones before. *");
+        System.out.println("* Pour la garden-party, vous avez besoin de préparer un feu d'artifice pour surprendre tout le monde. *");
         Thread.sleep(3000);
-        System.out.println("* Unfortunately you are with Ombrage for your class, so you need to distract her to secure Fredd and George ! *");
+        System.out.println("* Malheureusement tu es avec Dolores Ombrage pour ton cours, tu dois donc la distraire pour partir ! *");
         Thread.sleep(2000);
         GetFirework();
         Thread.sleep(2000);
-        System.out.println("* Everything went good. You have been diplomed, well done ! *");
-        System.out.println("* Your fifth year is now finished ! *");
+        System.out.println("* Tout c'est bien passé. Tu es diplomé ! *");
+        System.out.println("* Tu as 5ème année est terminé ! *");
         PassivLevelUp(wizard);
     }
     private void GetFirework() throws InterruptedException{
         boolean haveFirework = false;
         int probaGetFirework = 10;
         while (!haveFirework){
-            System.out.println("* Disturb Ombrage ! Move objects with spells to annoy her until you get fireworks... *");
+            System.out.println("* Essaye de distraire Dolores Ombrage ! Déplace des objets avec des sorts pour l'embêter jusqu'à ce que vous obteniez des feux d'artifice. *");
             Thread.sleep(2000);
             CastSpellLevel5();
             probaGetFirework = probaGetFirework + 20;
@@ -40,16 +40,16 @@ public class Level5 {
             if (random < probaGetFirework){
                 haveFirework = true;
                 Thread.sleep(2000);
-                System.out.println("* Fredd and Georg finally make pop Fireworks in your Wizard's coat ! They are ready to use. You can dismiss your class with Ombrage ! *");
-                System.out.println("* You left the class ... *");
+                System.out.println("* Tu es prêts à utiiliser les feux d'artifice. *");
+                System.out.println("* Tu peux quitter la classe. *");
 
-                Potion mediumHealPotion = new Potion("Medium Health Potion", 40);
-                Potion bigHealPotion = new Potion("Big Health Potion", 60);
+                Potion mediumHealPotion = new Potion("Potion de vie moyenne", 40);
+                Potion bigHealPotion = new Potion("Potion de vie grande", 60);
                 wizard.addPotion(mediumHealPotion,2);
                 wizard.addPotion(bigHealPotion,1);
-                System.out.println("* You got 1 big health potion and 2 medium health potions. *");
+                System.out.println("* Tu as une grande potion de vie et deux potions. *");
             } else {
-                System.out.println("* It is not enough, continue ! *");
+                System.out.println("* Ce n'est pas assez, continue ! *");
             }
         }
     }
@@ -63,19 +63,19 @@ public class Level5 {
             switch (spell.getName()) {
                 case "Wingardium Leviosa" -> {
                     Thread.sleep(1000);
-                    System.out.println("* You move an object around her back and distract her for a minute... *");
+                    System.out.println("* Tu as déplacé un objet pour la distaire 1 minute. *");
                 }
                 case "Accio" -> {
                     Thread.sleep(1000);
-                    System.out.println("* You move an object behind her back and distract her for a minute... *");
+                    System.out.println("* Tu as déplacé un objet pour la distaire 1 minute. *");
                 }
                 case "Expecto Patronum" -> {
                     Thread.sleep(1000);
-                    System.out.println("* No you do not want to cast this spell to distract her... *");
+                    System.out.println("* Non, tu ne peux pas lancer ce sort pour la distraire. *");
                 }
             }
         } else {
-            System.out.println("* You missed your spell... *");
+            System.out.println("* Tu as manqué le sort. *");
         }
     }
 }

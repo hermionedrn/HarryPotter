@@ -14,11 +14,11 @@ public enum Pet {
         Pet pet = null;
         int choix = 0;
         while(pet == null) {
-            System.out.println("* Which one of these pets would you like to have ? (enter a number). *\n" +
-                    "1. Owl \n" +
+            System.out.println("* Lequel de ces animaux aimeriez-vous avoir ? (entrer un chiffre). *\n" +
+                    "1. Hibou \n" +
                     "2. Rat \n" +
-                    "3. Cat \n" +
-                    "4. Toad \n");
+                    "3. Chat \n" +
+                    "4. Crapaud \n");
 
             if (sc.hasNextInt()) {
                 choix = sc.nextInt();

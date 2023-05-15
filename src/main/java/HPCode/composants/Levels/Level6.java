@@ -16,28 +16,25 @@ public class Level6 {
     private Wizard wizard;
     public void run6(Wizard wizard) throws InterruptedException {
         System.out.println("");
-        System.out.println("-------------------- Astronomy tower ---------------------");
+        System.out.println("-------------------- Tour d'astronomie ---------------------");
         System.out.println("");
-        System.out.println("* Dumbledor feels this summer that terrible things are going to happened so he decided to learn you Sectumsempra, a deadly spell...  *");
+        System.out.println("* Dumbledore sent cet été que des choses terribles vont se passer alors il a décidé de vous apprendre Sectumsempra, un sortilège mortel...  *");
         Thread.sleep(1000);
         Spell.learnSectumsempra(wizard.getKnownSpells());
         Thread.sleep(1500);
-        System.out.println("* Mangemort are attacking Hogwards !! You need to defend your school !");
+        System.out.println("* Des Mangemort attaquent Poudlard !! Tu dois défendre ton école !");
         Enemy mangemort = Enemy.Mangemort();
         Enemy ombrage = Enemy.DoloresOmbrage();
-        if (wizard.getHouse() == House.SLYTHERIN){
-            System.out.println("* Do you want to join Mangemorts aginst Hogwards ? *");
-            //oui | non
-            //oui -> fight ombrage.
-            //non -> Comme le else.
+        if (wizard.getHouse() == House.SERPENTARD){
+            System.out.println("* Veux-tu rejoindre les Mangemorts pour être contre Poudlard ? *");
             Scanner sc = new Scanner(System.in);
             int choice; //Force the user to enter 1 or 2, unless it doesn't work.
             do {
-                System.out.println("* Do you want to join them ? *\n" +
+                System.out.println("* Tu veux les rejoindre ? *\n" +
                         "1. Yes\n" +
                         "2. No");
                 while (!sc.hasNextInt()) {
-                    System.out.println("Enter 1 or 2.");
+                    System.out.println("Entre 1 ou 2.");
                     sc.next();
                 }
                 choice = sc.nextInt();
@@ -46,15 +43,15 @@ public class Level6 {
             switch (choice) { //Action depending on the choice of the user.
                 case 1 -> {//If yes.
                     wizard.setHavePastDarkSide(true);
-                    System.out.println("* Ombrage have seen you changing camps. She decided to fight you ! The battle start...");
+                    System.out.println("* Dolores Ombrage tas vu changé de camps, tu vas devoir l'affronter ! Que la bataille commence.");
                     Thread.sleep(2000);
                     wizard.attack(ombrage);
                     if (ombrage.getHealth() <= 0){
                         Thread.sleep(1500);
-                        System.out.println("* You have defeted her... You feel a bit weird... However the mangemorts are loosing the fight so you left the battlefied with them. *");
+                        System.out.println("* Tu l'as vaincue, mais les mangemorts perdent le combat, tu dois quitter le champ de bataille. *");
                         PassivLevelUp(wizard);
                     } else {
-                        System.out.println("* You loose the fight... GAME OVER *");
+                        System.out.println("* Tu as perdu la bataille... GAME OVER *");
                         System.exit(0);
                     }
                 }
@@ -67,28 +64,28 @@ public class Level6 {
         }
     }
     private void EndLevel6(Enemy mangemort) throws InterruptedException {
-        System.out.println("* Watch out here is the first Mangemort ! The battle start... *");
+        System.out.println("* Le permier Mangemort arrive. La bataille commence. *");
         Thread.sleep(1500);
         wizard.attack(mangemort);
         if (mangemort.getHealth() <= 0){
             Thread.sleep(2000);
-            System.out.println("* Congrats ! However it is not finished... Here is another one ! *");
+            System.out.println("* Félicitation ! Cependant ce n'est pas fini, d'autres arrivent ! *");
             wizard.attack(mangemort);
             if (mangemort.getHealth() <= 0){
                 Thread.sleep(2000);
-                System.out.println("* Well done ! The teatchers have finished battling the invaders. The battle ends. *");
-                System.out.println("* You have passed the sixth years. *");
+                System.out.println("* Bravo tu as réussi à tous les combattres. *");
+                System.out.println("* A présent, tu passes en 7ème année. *");
                 Thread.sleep(1500);
                 PassivLevelUp(wizard);
-                Potion bigHealPotion = new Potion("Big Health Potion", 60);
+                Potion bigHealPotion = new Potion("Potion de vie grande", 60);
                 wizard.addPotion(bigHealPotion,2);
-                System.out.println("* You got 2 big health potions. *");
+                System.out.println("* Tu possèdes 2 grandes potions de vie. *");
             } else {
-                System.out.println("* You loose the fight... GAME OVER *");
+                System.out.println("* Tu as perdu la bataille... GAME OVER *");
                 System.exit(0);
             }
         }else {
-            System.out.println("* You loose the fight... GAME OVER *");
+            System.out.println("* Tu as perdu la bataille... GAME OVER *");
             System.exit(0);
         }
     }

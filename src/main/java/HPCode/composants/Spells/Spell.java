@@ -25,73 +25,73 @@ public class Spell extends AbstractSpell {
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {
-            System.out.println("Enter Wingardium Leviosaaa if you want to learn it :");
+            System.out.println("Entre Wingardium Leviosa si tu veux l'apprendre :");
             String choice = sc.nextLine();
-            if ("Wingardium Leviosaaa".equals(choice)) {
+            if ("Wingardium Leviosa".equals(choice)) {
                 //SuccesChance = 90. Wizard accuracy = 5. So 95% chance of succed to cast a spell.
                 Spell WingardiumLeviosa = new Spell("Wingardium Leviosa", 85, 2);
                 knownSpells.add(WingardiumLeviosa);
                 spell = choice;
             } else {
-                System.out.println("* You failed to learn the spell. *");
+                System.out.println("* Tu n'as pas réussi à apprendre le sort. *");
             }
         }
-        System.out.println("* You have succeed to learned the spell Wingardium Leviosa. *");
+        System.out.println("* Tu as appris avec succès le sort Wingardium Leviosa. *");
     }
 
     public static void learnAccio(List<Spell> knownSpells) {
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {
-            System.out.println("Enter Accio if you want to learn it :");
+            System.out.println("Entre Accio si tu veux apprendre le sort :");
             String choice = sc.nextLine();
             if ("Accio".equals(choice)) {
                 Spell Accio = new Spell("Accio", 75, 3);
                 knownSpells.add(Accio);
                 spell = choice;
             } else {
-                System.out.println("* Your book hasn't move *");
-                System.out.println("* You failed to learn the spell. *");
+                System.out.println("* Ton livre n'a pas bougé *");
+                System.out.println("* Tu n'as pas réussi à apprendre le sort. *");
             }
         }
-        System.out.println("* Your book comes to you slowly... *");
-        System.out.println("* You have succeed to learned the spell Accio. *");
+        System.out.println("* Ton livre vient à vous lentement... *");
+        System.out.println("* Tu as réussi à apprendre le sort Accio. *");
     }
 
     public static void learnExpectoPatronum(List<Spell> knownSpells){
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {
-            System.out.println("Enter the spell if you want to learn it :");
+            System.out.println("Entre le sort si tu veux apprendre :");
             String choice = sc.nextLine();
-            if ("Expecto Patronumm".equals(choice)) {
+            if ("Expecto Patronum".equals(choice)) {
                 Spell ExpectoPatronum = new Spell("Expecto Patronum", 70, 0);
                 knownSpells.add(ExpectoPatronum);
                 spell = choice;
             } else {
-                System.out.println("- Teatcher - You hasn't pay attention to what I have juste said...");
-                System.out.println("* You failed to learn the spell. *");
+                System.out.println("- Professeur - Tu n'as pas fait attention à ce que je viens de dire...");
+                System.out.println("* Tu n'as pas réussi à apprendre le sort. *");
             }
         }
-        System.out.println("* You have succeed to learned the spell Expecto Patronum. *");
+        System.out.println("* Tu as réussi avec succès à apprendre le sort Expecto Patronum. *");
     }
 
     public static void learnSectumsempra(List<Spell> knownSpells){
         Scanner sc = new Scanner(System.in);
         String spell = null;
         while (spell == null) {
-            System.out.println("- Dumbledor - Well well, i'm going to teatch you a deadly spell... Target this bird and say clearly : Sectuumsemmpraaa. ");
+            System.out.println("- Dumbledor - Eh bien, je vais t'apprendre un sortilège mortel... Regarde la cible et dit clairement : Sectumsempra. ");
             String choice = sc.nextLine();
-            if ("Sectuumsemmpraaa".equals(choice)) {
+            if ("Sectumsempra".equals(choice)) {
                 Spell Sectumsempra = new Spell("Sectumsempra", 30, 9999);
                 knownSpells.add(Sectumsempra);
                 spell = choice;
             } else {
-                System.out.println("- Dumbledor - Yes yes it is a difficult spell... Try again !");
-                System.out.println("* You failed to learn the spell. *");
+                System.out.println("- Dumbledor - Oui oui c'est un sort difficile... Essaye encore !");
+                System.out.println("* Tu n'as pas réussi à apprendre le sort. *");
             }
         }
-        System.out.println("* You have succeed to learned the spell Sectumsempra. *");
+        System.out.println("* Tu as appris avec succès à apprendre le sort Sectumsempra. *");
     }
 
     // --------------- Spell Mechanic(s) --------------- //
@@ -101,9 +101,9 @@ public class Spell extends AbstractSpell {
         boolean castSucces = false;
         if (random <= spellCastChance){
             castSucces = true;
-            System.out.println("* TRUE (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
+            System.out.println("* VRAI (Ton score : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }else{
-            System.out.println("* FALSE (Your score (if above -> fail) : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
+            System.out.println("* FAUX (Ton score : " + random + "/" + spellCastChance + "."); //For me to see if it works during battle tests
         }
         return castSucces;
     }

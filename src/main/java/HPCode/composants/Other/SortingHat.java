@@ -11,16 +11,16 @@ public class SortingHat {
         // Assign a house based on the random number
         if (randomNum == 0) {
             wizard.setPotionBonus(wizard.getPotionBonus() + 5);
-            wizard.setHouse(House.HUFFLEPUFF);
+            wizard.setHouse(House.POUFSOUFFLE);
         } else if (randomNum == 1) {
             wizard.setDefence(wizard.getDefence() + 0.1f);
-            wizard.setHouse(House.GRYFFINDOR);
+            wizard.setHouse(House.GRYFFONDOR);
         } else if (randomNum == 2) {
             wizard.setAccuracy(wizard.getAccuracy() + 3);
-            wizard.setHouse(House.RAVENCLAW);
+            wizard.setHouse(House.SERDAIGLE);
         } else {
             wizard.setDamage(wizard.getDamage() + 5);
-            wizard.setHouse(House.SLYTHERIN);
+            wizard.setHouse(House.SERPENTARD);
         }
     }
 }

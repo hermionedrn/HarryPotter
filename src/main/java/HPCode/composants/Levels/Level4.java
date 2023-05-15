@@ -12,18 +12,17 @@ public class Level4 {
 
     public void run4(Wizard wizard) throws InterruptedException {
         System.out.println("");
-        System.out.println("-------------------- Little Hangleton cemetery ---------------------");
+        System.out.println("-------------------- Cimetière de Little Hangleton ---------------------");
         System.out.println("");
-        System.out.println("* Welcome in 4th grade ! This year will be quite difficult because you will participate to the three wizards tournament... *");
+        System.out.println("* Bienvenue en 4ème année ! Cette année va être difficile car vous allez participer à un tournoi... *");
         Thread.sleep(1500);
-        System.out.println("* The year has been charge in exams but you pass ! *");
-        System.out.println("* Today is the great day because the tournament START ! You manage to be in the finalist, however it's a trap... *");
+        System.out.println("* Aujourd'hui c'est le tournoi bon courage !! *");
         Thread.sleep(2000);
-        System.out.println("* You have been teleport in a graveyard... Watch-out you're in the presence of Voldemort and Petter Pettigrew !!!!! *");
+        System.out.println("* Tu as été téléporté dans un cimetière... Attention il y a aussi Voldemort et Petter Pettigrew !!!!! *");
         System.out.println("* Catch the Portkey with a spell to escape ! *");
         Thread.sleep(2000);
         CastSpellLevel4();
-        System.out.println("* That was close but well done ! Your fourth year in Hogwwards is finished ! *");
+        System.out.println("* C'était juste mais bien joué, car ta 4ème est terminée ! *");
         PassivLevelUp(wizard);
     }
     private void CastSpellLevel4(){
@@ -35,25 +34,25 @@ public class Level4 {
 
                 switch (spell.getName()) {
                     case "Wingardium Leviosa" -> {
-                        System.out.println("* This spell can't get you the Portkey... *");
-                        System.out.println("* Voldemort gently roast you with a spell and you loose 10 Max Health points...");
+                        System.out.println("* Ce sort ne peut pas vous rapporcher du Portkey ... *");
+                        System.out.println("* Voldemort vous élimine doucement avec un sort et vous perdez 10 points de vie.");
                         wizard.setMaxHealth(wizard.getMaxHealth() - 10);
-                        System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
+                        System.out.println(" >>> Ta vie : " + wizard.getMaxHealth() + ".");
                     }
                     case "Accio" -> {
-                        System.out.println("* Congrats you quickly drag the Portkey to you and escape ! *");
+                        System.out.println("* Bien joué, tu as fait glisser le Portkey vers toi, échappe-toi ! *");
                         escape = true;
                     }
                     case "Expecto Patronum" -> {
-                        System.out.println("* This spell can't get you the Portkey... But you cast a bright shield between you and the enemies ! *");
-                        System.out.println("* Try another spell *");
+                        System.out.println("* Ce sort ne peut pas vous procurer le Portkey, mais tu es protégé par les ennemis ! *");
+                        System.out.println("* Essaye un autre sort *");
                     }
                 }
             } else {
-                System.out.println("* You missed your spell ... *");
-                System.out.println("* Voldemort gently roast you with a spell and you loose 10 Max Health points...");
+                System.out.println("* Tu as râté le sort... *");
+                System.out.println("* Voldemort t'élimine doucement, tu perds 10 points de vie.");
                 wizard.setMaxHealth(wizard.getMaxHealth() - 10);
-                System.out.println(" >>> Your Health : " + wizard.getMaxHealth() + ".");
+                System.out.println(" >>> Ta vie : " + wizard.getMaxHealth() + ".");
             }
         }
     }

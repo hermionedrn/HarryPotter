@@ -17,24 +17,20 @@ public class Main {
 
         System.out.println("");
         System.out.println("");
-        System.out.println("*---* Welcome into Harry Potter's World... First of all, who are you ? *---*");
+        System.out.println("*---* Bienvenue dans le monde d'Harry Potter, qui es-tu ? *---*");
         // Creating the main character
-        System.out.print("Enter your first name : ");
+        System.out.print("Entre ton prénom : ");
         String firstName = sc.nextLine();
-        System.out.print("Enter your last name : ");
+        System.out.print("Entre ton nom de famille : ");
         String lastName = sc.nextLine();
         // Setting the data of the character
-        Potion smallHealPotion = new Potion("Small Health Potion", 20);
+        Potion smallHealPotion = new Potion("Potion de vie", 20);
         Wand wand = new Wand();
         wand.getCore();
         wand.setSize(wand.getWandSize());
         Wizard wizard = new Wizard(22, 0, 5, 0, 10, firstName, lastName, null, wand, null, new ArrayList<>(), new ArrayList<>());
         SortingHat.assignHouse(wizard);
-        /* Only use : for me when i skip levels and test my latest level release.
-        Spell.learnWingardium(wizard.getKnownSpells());
-        Spell.learnAccio(wizard.getKnownSpells());
-        Spell.learnExpectoPatronum(wizard.getKnownSpells());
-        Spell.learnSectumsempra(wizard.getKnownSpells());*/
+
         // --------------- Chapters --------------- //
         Levels(wizard);
 

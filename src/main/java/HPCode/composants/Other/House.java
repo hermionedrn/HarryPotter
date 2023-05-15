@@ -1,8 +1,8 @@
 package HPCode.composants.Other;
 
 public enum House {
-    HUFFLEPUFF,
-    SLYTHERIN,
-    GRYFFINDOR,
-    RAVENCLAW,
+    GRYFFONDOR,
+    POUFSOUFFLE,
+    SERDAIGLE,
+    SERPENTARD,
 }

@@ -50,7 +50,7 @@ public class Wizard extends Character {
     // --------------- Spell --------------- //
     public Spell chooseSpell(List<Spell> knownSpells) { //Choose a spell use in battle loop.
         Scanner sc = new Scanner(System.in);
-        System.out.println("* Choose a spell to cast: (Enter a number) *");
+        System.out.println("* Choisi le sort que tu veux lancer : (Entre le nombre) *");
         int index = 1; // Start at 1, so the choices start with 1. and not 0.
         for (Spell spell : knownSpells) { //Choice like this : 1. Wingardium Leviosa.
             System.out.println(index++ + ". " + spell.getName());
@@ -59,7 +59,7 @@ public class Wizard extends Character {
         do {
             choice = sc.nextInt();
             if (choice < 1 || choice > knownSpells.size()) {
-                System.out.println("Enter a number in the list.");
+                System.out.println("Entre un nombre parmi la liste.");
             }
         } while (choice < 1 || choice > knownSpells.size());
         return knownSpells.get(choice - 1);// -1 to select the right choice according to the user because Lists start at indices 0, and our indice start at 1.
@@ -68,13 +68,13 @@ public class Wizard extends Character {
     // --------------- Potion --------------- //
     public Potion choosePotion(List<Potion> potions) { //Choose a potion use in battle loop.
         Scanner sc = new Scanner(System.in);
-        System.out.println("* Choose a potion to use: (Enter a number) *");
+        System.out.println("* Choisi la potion que tu souhaites utiliser : (Entre le chiffre) *");
         PrintPotions();
         int choice; //Make sure the user is typing a valid potion number (an existing potion in the list).
         do {
             choice = sc.nextInt();
             if (choice < 1 || choice > knownSpells.size()) {
-                System.out.println("Enter a number in the list.");
+                System.out.println("Entre un chiffre de la liste.");
             }
         } while (choice < 1 || choice > knownSpells.size());
         return potions.get(choice - 1);// -1 to select the right choice according to the user because List start at indices 0.
@@ -107,38 +107,38 @@ public class Wizard extends Character {
     // --------------- Levels --------------- //
     public static void levelUp(Wizard wizard) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("* Congrats you passed the level ! Choose the stat you want to level up : (Enter a number) *");
-        System.out.println("1. Health\n" +
-                "2. Damage\n" +
-                "3. Defense\n" +
-                "4. Potion Bonus Efficacy");
+        System.out.println("* Bien joué tu passes au level supérieur ! Choisi la statistique que tu souhaite améliorer : (Entre un chiffre) *");
+        System.out.println("1. Vie\n" +
+                "2. Dégât\n" +
+                "3. Défense\n" +
+                "4. Efficacité du bonus de potion");
         int choice = sc.nextInt();
         switch (choice) {
             case 1 -> {
                 int newHealth = wizard.getMaxHealth() + 15;
                 wizard.setMaxHealth(newHealth);
-                System.out.println("* Your health has been increased by 15. *");
+                System.out.println("* Ta santé a été augmentée de 15. *");
                 System.out.println(wizard.Stats());
             }
             case 2 -> {
                 int newDamage = wizard.getDamage() + 4;
                 wizard.setDamage(newDamage);
-                System.out.println("* Your damage has been increased to by 4. *");
+                System.out.println("* Tes dégâts ont été augmenté de 4. *");
                 System.out.println(wizard.Stats());
             }
             case 3 -> {
                 float newDefense = (float) (wizard.getDefence() + 0.1);
                 wizard.setDefence(newDefense);
-                System.out.println("* Your defense has been increased by 10%. *");
+                System.out.println("* Ta défense a été augmenté de 10%. *");
                 System.out.println(wizard.Stats());
             }
             case 4 -> {
                 int newPotionBonus = wizard.getPotionBonus() + 20;
                 wizard.setPotionBonus(newPotionBonus);
-                System.out.println("* Your potion bonus has been increased by 20. *");
+                System.out.println("* L'efficacité de ta potion a été augmenté de 20. *");
                 System.out.println(wizard.Stats());
             }
-            default -> System.out.println("* Invalid choice. Enter a number. *");
+            default -> System.out.println("* Choix invalide. Entre un chiffre. *");
         }
     }
 
@@ -152,17 +152,17 @@ public class Wizard extends Character {
     // --------------- Stats --------------- //
     public String Stats() {
         StringBuilder spells = new StringBuilder();
-        return  "*--------Your Stats--------*" +
+        return  "*--------Tes statistiques--------*" +
                 "\n" +
-                " Name and Last Name : " + getFirstName() + " " + getLastName() + "\n" +
-                " Health : " + getMaxHealth() + "\n" +
-                " Defence : " + getDefence() + "\n" +
-                " Damage : " + getDamage() + "\n" +
-                " Accuracy : " + getAccuracy() + "\n" +
-                " Potion Bonus Efficacity : " + getPotionBonus() + "\n" +
-                " House : " + getHouse() + "\n" +
-                " Pet : " + getPet() + "\n" +
-                " Wand : " + getWand() + "\n" +
+                " Prénom et Nom : " + getFirstName() + " " + getLastName() + "\n" +
+                " Vie : " + getMaxHealth() + "\n" +
+                " Défense : " + getDefence() + "\n" +
+                " Dégât : " + getDamage() + "\n" +
+                " Précision : " + getAccuracy() + "\n" +
+                " Efficacité du bonus de potion : " + getPotionBonus() + "\n" +
+                " Maison : " + getHouse() + "\n" +
+                " Animal : " + getPet() + "\n" +
+                " Baguette magique : " + getWand() + "\n" +
                 "*--------------------------*" ;
     }
 
